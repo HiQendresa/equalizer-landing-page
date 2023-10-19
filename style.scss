@@ -1,0 +1,104 @@
+:root {
+
+    --clr-white: 0, 0%, 100%;
+    --clr-cyan: 178, 100%, 50%;
+    --clr-soft-blue: 215, 51%, 70%;
+    --very-dark-blue-line: 216, 32%, 27%;
+
+    --font-family-outfit: 'Outfit', sans-serif;
+}
+
+*,
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ 
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  max-width: 1440px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 100px;
+  background-image: url('./assets/bg-main-desktop.png');
+
+  position: relative;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+header {
+
+    .logo {
+        width: 146.093px;
+        height: 32px;
+        display: inline-block;
+    }
+
+    .image {
+        width: 312px;
+        height: 468px;
+        position: absolute;
+        right: 0;
+        top: -36px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 150px;
+        gap: 25px;
+
+        .title {
+            width: 1000px;
+
+            color: #191826;
+            font-family: IBM Plex Sans;
+            font-size: 88px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 88px; 
+            letter-spacing: -1px;
+        }
+
+        .description {
+            width: 790px;
+            color: #191826;
+            font-family: IBM Plex Sans;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 34px;
+        }
+    }
+}
