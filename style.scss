@@ -38,12 +38,18 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   max-width: 1440px;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 100px;
+ 
+  padding: 50px;
   background-image: url('./assets/bg-main-desktop.png');
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
   position: relative;
+
+  @media screen and (min-width: 676px) {
+    padding: 50px 100px;
+  }
 }
 
 a:not([class]) {
@@ -65,40 +71,176 @@ header {
     }
 
     .image {
-        width: 312px;
-        height: 468px;
         position: absolute;
-        right: 0;
         top: -36px;
+
+        display: none;
+
+        @media screen and (min-width: 676px) {
+            display: block;
+            width: 266.667px;
+            height: 400px;
+            right: -3%;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 312px;
+            height: 468px;
+            right: 0;
+        }
     }
 
     .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 150px;
+        margin-top: 50px;
         gap: 25px;
 
-        .title {
-            width: 1000px;
+        @media screen and (min-width: 676px) {
+            margin-top: 150px;
+        }
 
+        .title {
+            max-width: 327px;
             color: #191826;
             font-family: IBM Plex Sans;
-            font-size: 88px;
+            font-size: 40px;
             font-style: normal;
             font-weight: 700;
+            line-height: 48px;
+            letter-spacing: -0.455px;
+
+            @media screen and (min-width: 676px) {
+                max-width: 520px;
+                font-size: 64px;
+                line-height: 64px;
+                letter-spacing: -0.727px;
+            }
+
+            @media screen and (min-width: 1200px) {
+            max-width: 1000px;
+            font-size: 88px;
             line-height: 88px; 
             letter-spacing: -1px;
+            }
         }
 
         .description {
-            width: 790px;
+            max-width: 327px;
             color: #191826;
             font-family: IBM Plex Sans;
-            font-size: 20px;
+            font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 34px;
+            line-height: 26px; 
+
+            @media screen and (min-width: 676px) {
+                max-width: 514px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+
+            @media screen and (min-width: 1200px) {
+                max-width: 790px;
+                font-size: 20px;
+                line-height: 34px;
+            }
+        }
+    }
+}
+
+main {
+    position: relative;
+    margin-top: 250px;
+
+    .container {
+        width: 1110px;
+        height: 600px;
+        border-radius: 12px;
+        background: #191826;
+
+
+        .image {
+            position: absolute;
+            top: -30%;
+            left: 12%;
+            width: 280px;
+            height: 606px;
+            z-index: 1;
+        }
+
+        .image-bg {
+            position: absolute;
+            left: 28.5%;
+            top: -8%;
+        }
+
+        .content {
+            width: 446px;
+            height: 625px;
+            padding: 50px;
+
+            border-radius: 12px;
+            background: #FA7453;
+            position: absolute;
+
+            right: 16%;
+            top: 12%;
+
+            .title {
+                color: #FCFAF9;
+                font-family: IBM Plex Sans;
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 52px; 
+            }
+
+            .description {
+                color: #FCFAF9;
+                font-family: IBM Plex Sans;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 34px;
+            }
+
+            .price {
+                display: flex;
+                gap: 20px;
+
+                color: #FCFAF9;
+                font-family: IBM Plex Sans;
+                font-size: 65px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 52px; 
+
+                span {
+                    color: #FCFAF9;
+                    font-family: IBM Plex Sans;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 32px;
+                    letter-spacing: -0.2px;
+                }
+            }
+
+            .btn {
+                width: 333px;
+                height: 61px;
+                border-radius: 12px;
+            }
+
+            .btn-ios {
+                background: #66E2DC;
+            }
+            
+            .btn-android {
+                background: #FFB964;
+            }
         }
     }
 }
