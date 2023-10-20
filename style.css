@@ -1,9 +1,8 @@
 :root {
   --clr-white: 0, 0%, 100%;
-  --clr-cyan: 178, 100%, 50%;
-  --clr-soft-blue: 215, 51%, 70%;
-  --very-dark-blue-line: 216, 32%, 27%;
-  --font-family-outfit: "Outfit", sans-serif;
+  --clr-black: 244, 23%, 12%;
+  --clr-cream: 20, 33%, 98%;
+  --font-family-ibm: "IBM Plex Sans", sans-serif;
 }
 
 *,
@@ -36,7 +35,6 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   max-width: 1440px;
-  padding: 10px;
   background-image: url("./assets/bg-main-desktop.png");
   background-position: top;
   background-size: 100%;
@@ -65,6 +63,10 @@ picture {
   display: block;
 }
 
+header {
+  padding: 10px;
+  padding-top: 50px;
+}
 header .logo {
   width: 146.093px;
   height: 32px;
@@ -104,8 +106,8 @@ header .content {
 }
 header .content .title {
   max-width: 327px;
-  color: #191826;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-black));
+  font-family: var(--font-family-ibm);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -130,8 +132,8 @@ header .content .title {
 }
 header .content .description {
   max-width: 327px;
-  color: #191826;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-black));
+  font-family: var(--font-family-ibm);
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -154,23 +156,17 @@ header .content .description {
 
 main {
   position: relative;
-  margin-top: 250px;
-}
-main .container {
-  max-width: 375px;
-  height: 600px;
-  border-radius: 12px;
-  background: #191826;
-}
-@media screen and (min-width: 676px) {
-  main .container {
-    max-width: 696px;
-  }
+  margin-top: 160px;
 }
 @media screen and (min-width: 1200px) {
-  main .container {
-    max-width: 1110px;
+  main {
+    margin-top: 250px;
   }
+}
+main .container {
+  height: 600px;
+  border-radius: 12px;
+  background: hsl(var(--clr-black));
 }
 main .container .image {
   position: absolute;
@@ -238,8 +234,8 @@ main .container .content {
   }
 }
 main .container .content .title {
-  color: #FCFAF9;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-cream));
+  font-family: var(--font-family-ibm);
   font-size: 40px;
   font-style: normal;
   font-weight: 700;
@@ -251,8 +247,8 @@ main .container .content .title {
   }
 }
 main .container .content .description {
-  color: #FCFAF9;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-cream));
+  font-family: var(--font-family-ibm);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -266,16 +262,16 @@ main .container .content .description {
 main .container .content .price {
   display: flex;
   gap: 20px;
-  color: #FCFAF9;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-cream));
+  font-family: var(--font-family-ibm);
   font-size: 65px;
   font-style: normal;
   font-weight: 700;
   line-height: 52px;
 }
 main .container .content .price span {
-  color: #FCFAF9;
-  font-family: IBM Plex Sans;
+  color: hsl(var(--clr-cream));
+  font-family: var(--font-family-ibm);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -287,6 +283,7 @@ main .container .content .btns .btn {
   height: 61px;
   border-radius: 12px;
   border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,13 +303,70 @@ main .container .content .btns .btn-ios {
   background: #66E2DC;
 }
 main .container .content .btns .btn-ios:hover {
-  background: #191826;
-  color: #FCFAF9;
+  background: hsl(var(--clr-black));
+  color: hsl(var(--clr-cream));
 }
 main .container .content .btns .btn-android {
   background: #FFB964;
   margin-top: 20px;
 }
 main .container .content .btns .btn-android:hover {
-  background: #FCFAF9;
+  background: hsl(var(--clr-cream));
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 150px;
+  padding-inline: 10px;
+  margin-top: 300px;
+  padding-bottom: 20px;
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    margin-top: 0px;
+    align-items: center;
+    gap: 0;
+    padding-inline: 0;
+  }
+}
+footer .logo {
+  width: 146.093px;
+  height: 32px;
+}
+footer .content {
+  max-width: 366px;
+  color: hsl(var(--clr-black));
+  font-family: var(--font-family-ibm);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+footer .social-media {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  footer .social-media {
+    justify-content: right;
+  }
+}
+footer .social-media img {
+  width: 13px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: #FFF;
+  stroke-width: 1px;
+  stroke: #000;
+}
+footer .social-media img:hover {
+  fill: red;
 }/*# sourceMappingURL=style.css.map */
